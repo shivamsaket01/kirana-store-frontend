@@ -17,12 +17,12 @@ export default function Home() {
   }, []);
 
   const categories = [
-    { title: "आटा, चावल, दाल", img: "https://images.unsplash.com/photo-1521483451569-e33803c0330c?auto=format&fit=crop&w=300&q=80", color: "from-[#14532d]" },
-    { title: "तेल, मसाले, नमक", img: "https://images.unsplash.com/photo-1601033201520-25e24399e82c?auto=format&fit=crop&w=300&q=80", color: "from-[#facc15]" },
-    { title: "बिस्कुट, चॉकलेट", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=300&q=80", color: "from-[#14532d]" },
-    { title: "नमकीन, स्नैक्स", img: "https://images.unsplash.com/photo-1600492193202-31d04135508a?auto=format&fit=crop&w=300&q=80", color: "from-[#facc15]" },
-    { title: "चाय, कॉफी, दूध", img: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=300&q=80", color: "from-[#14532d]" },
-    { title: "साबुन, शैम्पू", img: "https://images.unsplash.com/photo-1615920349861-3d8ea316c322?auto=format&fit=crop&w=300&q=80", color: "from-[#facc15]" },
+    { title: "आटा, चावल, दाल", img: "https://images.unsplash.com/photo-1702061895070-15d7972d3eef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#14532d]" },
+    { title: "तेल, मसाले, नमक", img: "https://images.unsplash.com/photo-1653379316270-49c7b3d70110?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#facc15]" },
+    { title: "बिस्कुट, चॉकलेट", img: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#14532d]" },
+    { title: "नमकीन, स्नैक्स", img: "https://images.unsplash.com/photo-1600952841320-db92ec4047ca?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#facc15]" },
+    { title: "चाय, कॉफी, दूध", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#14532d]" },
+    { title: "साबुन, शैम्पू", img: "https://media.gettyimages.com/id/514771903/photo/woman-buys-washing-powder.jpg?s=1024x1024&w=gi&k=20&c=NZi7cb2YRQSmVsvUpLBaRyC3kinv8t11vwJ0qVP4cUM=", color: "from-[#facc15]" },
   ];
 
   // Dummy testimonials – replace with real ones later
@@ -58,10 +58,10 @@ export default function Home() {
   ];
 
   const featuredProducts = [
-    { name: "आस्था आटा (5kg)", price: "₹220", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=300&q=80" },
-    { name: "धारा तेल (1L)", price: "₹110", img: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=300&q=80" },
-    { name: "बिस्कुट पैक (1kg)", price: "₹80", img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=300&q=80" },
-    { name: "चना दाल (1kg)", price: "₹95", img: "https://images.unsplash.com/photo-1515543904379-3d757f383f7a?auto=format&fit=crop&w=300&q=80" },
+    { name: "आस्था आटा (5kg)", price: "₹220", img: "https://5.imimg.com/data5/SELLER/Default/2021/7/EQ/AA/AY/6428050/5-kg-wheat-flour-500x500.jpeg" },
+    { name: "धारा तेल (1L)", price: "₹110", img: "https://m.media-amazon.com/images/I/510JZdHZZvL._SX679_.jpg" },
+    { name: "बिस्कुट पैक (1kg)", price: "₹80", img: "https://keralakaumudi.com/web-news/en/2025/06/NMAN0592930/image/new-delhi-parle-g-biscuit.1.3308115.webp" },
+    { name: "गुड़ और शक्कर  (1kg)", price: "₹60", img: "https://c.ndtvimg.com/2023-11/tt2lmteo_jaggery-and-sugar-_625x300_12_November_23.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=738" },
   ];
 
   return (
@@ -185,33 +185,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Owner's Message / Local Connect */}
-      <section className="py-16 px-4 max-w-5xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#facc15]/30">
-          <div className="grid md:grid-cols-2">
-            <div className="p-8 md:p-12 bg-gradient-to-br from-[#14532d] to-[#14532d]/90 text-white">
-              <h2 className="text-3xl font-black mb-4">राजकुमारी जी का संदेश</h2>
-              <p className="text-gray-100 mb-6 leading-relaxed">
-                "पिछले १२ सालों से हम आपके लिए रोज़मर्रा का सामान लाते हैं। हर पैकेट, हर दाना हम खुद देखते हैं, ताकि आपको मिले सिर्फ़ सबसे अच्छा। ये दुकान सिर्फ़ दुकान नहीं, हमारा परिवार है – और आप उस परिवार का हिस्सा हैं।"
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#facc15] rounded-full flex items-center justify-center text-[#14532d] font-black text-xl">रा</div>
-                <div>
-                  <p className="font-bold text-lg">राजकुमारी देवी</p>
-                  <p className="text-sm text-[#facc15]">संस्थापक, राजकुमारी किराना स्टोर</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#facc15] p-8 md:p-12 flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-6xl mb-4">🏪</p>
-                <p className="text-2xl font-black text-[#14532d] mb-2">आओ, मिलकर बैठें</p>
-                <p className="text-[#14532d]/80">गली नंबर ७, मेन बाज़ार – आपके बस कदमों की दूरी पर</p>
-              </div>
-            </div>
+      {/* Owner's Message / Local Connect
+     {/* Owner's Message / Local Connect */}
+<section className="py-16 px-4 max-w-5xl mx-auto">
+  <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
+    <div className="grid md:grid-cols-2">
+      
+      {/* LEFT SIDE */}
+      <div className="p-8 md:p-12 bg-gradient-to-br from-[#14532d] to-[#14532d]/90 text-white">
+        <h2 className="text-3xl font-black mb-4">राजकुमारी जी का संदेश</h2>
+        <p className="text-gray-100 mb-6 leading-relaxed">
+          "पिछले 5 सालों से हम आपके लिए रोज़मर्रा का सामान लाते हैं। हर पैकेट, हर दाना हम खुद देखते हैं, ताकि आपको मिले सिर्फ़ सबसे अच्छा। ये दुकान सिर्फ़ दुकान नहीं, हमारा परिवार है – और आप उस परिवार का हिस्सा हैं।"
+        </p>
+
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#14532d] font-black text-xl shadow-md">
+            रा
+          </div>
+          <div>
+            <p className="font-bold text-lg">राजकुमारी देवी</p>
+            <p className="text-sm text-gray-200">
+              संस्थापक, राजकुमारी किराना स्टोर
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* RIGHT SIDE */}
+      <div className="bg-white p-8 md:p-12 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-6xl mb-4">🏪</p>
+          <p className="text-2xl font-black text-[#14532d] mb-2">
+            आओ, मिलकर बैठें
+          </p>
+          <p className="text-gray-600">
+            शिव कॉलोनी, सरलानगर, मैहर (म.प्र.) – आपके बस कदमों की दूरी पर
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
 
       {/* 🌟 USER REVIEWS / TESTIMONIALS */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
@@ -272,7 +297,7 @@ export default function Home() {
                 <p><span className="font-bold">सोम-शनि:</span> सुबह 8:00 – रात 9:00</p>
                 <p><span className="font-bold">रविवार:</span> सुबह 9:00 – शाम 7:00</p>
                 <p className="mt-4"><span className="font-bold">📞 फोन:</span> 98765 43210</p>
-                <p><span className="font-bold">📍 पता:</span> गली नंबर 7, मेन बाज़ार, शहर</p>
+                <p><span className="font-bold">📍 पता:</span> शिव कॉलोनी, सरलानगर, मैहर (म.प्र.)</p>
               </div>
             </div>
             <div className="bg-[#facc15] p-6 rounded-2xl text-center">

@@ -22,7 +22,7 @@ export default function Footer() {
               </span>
             </h2>
             <p className="text-gray-300 leading-relaxed text-sm">
-              मैहर का सबसे भरोसेमंद किराना स्टोर। हम पिछले 5+ वर्षों से आपके घर तक शुद्ध और ताज़ा सामान पहुँचा रहे हैं। गुणवत्ता और भरोसा ही हमारी पहचान है।
+              शिव कॉलोनी, सरलानगर, मैहर (म.प्र.) का सबसे भरोसेमंद किराना स्टोर। हम पिछले 5+ वर्षों से आपके घर तक शुद्ध और ताज़ा सामान पहुँचा रहे हैं। गुणवत्ता और भरोसा ही हमारी पहचान है।
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#facc15]/20 hover:border-[#facc15]/50 transition-all duration-300">

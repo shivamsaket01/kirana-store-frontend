@@ -8,29 +8,29 @@ export default function Products() {
     {
       name: "Biscuits & Chocolates",
       products: [
-        { name: "Britannia 50-50 Biscuits", image: "https://www.bigbasket.com/media/uploads/p/l/102102_12-britannia-50-50-potazos-spicy-biscuits.jpg", price: 10 },
-        { name: "Parle-G Gold Biscuits", image: "https://www.bigbasket.com/media/uploads/p/l/40075454_7-parle-g-gold-biscuits.jpg", price: 20 },
-        { name: "Cadbury 5 Star Chocolate", image: "https://www.bigbasket.com/media/uploads/p/l/40019371_21-cadbury-5-star-chocolate-bar.jpg", price: 30 },
-        { name: "Nestle Kitkat", image: "https://www.bigbasket.com/media/uploads/p/l/1215446_1-nestle-kitkat-share-and-snap-chocolate-wafer-bar.jpg", price: 50 },
-        { name: "Oreo Biscuits", image: "https://www.bigbasket.com/media/uploads/p/l/1204487_1-cadbury-oreo-sandwich-biscuits-vanilla-cream.jpg", price: 100 },
+        { name: "Britannia 50-50 Biscuits", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd50rFQJbWqYeLPhbxoiLdNTjC3AzcPZGYcg&s", price: 10 },
+        { name: "Parle-G Gold Biscuits", image: "https://m.media-amazon.com/images/I/51MVCw8nBaL._AC_UF894,1000_QL80_.jpg", price: 20 },
+        { name: "Cadbury 5 Star Chocolate", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVvYvbw0mUW9mcMrGGiI2gTodu3Z7SIuwGdQ&s", price: 30 },
+        { name: "Nestle Kitkat", image: "https://m.media-amazon.com/images/I/61uzxiUgqcL._AC_UF894,1000_QL80_.jpg", price: 50 },
+        { name: "Oreo Biscuits", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS83No5AsvRcVHYlVoLLY5J7m8hIOUgBPHRg&s", price: 100 },
       ]
     },
     {
       name: "Snacks & Namkeen",
       products: [
-        { name: "Lay's Magic Masala Chips", image: "https://www.bigbasket.com/media/uploads/p/l/1203444_2-lays-potato-chips-india-s-magic-masala.jpg", price: 10 },
-        { name: "Kurkure Masala Munch", image: "https://www.bigbasket.com/media/uploads/p/l/1203437_2-kurkure-namkeen-masala-munch.jpg", price: 20 },
-        { name: "Haldiram Bhujia", image: "https://www.bigbasket.com/media/uploads/p/l/40051185_4-haldiram-nagpur-namkeen-bhujia-sev.jpg", price: 30 },
-        { name: "Bingo Mad Angles", image: "https://www.bigbasket.com/media/uploads/p/l/102555_10-bingo-mad-angles-namkeen-achaari-masti.jpg", price: 50 },
-        { name: "Peanuts (Moongphali)", image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=300&q=80", price: 100 },
+        { name: "Lay's Magic Masala Chips", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4mK4c_BdtFWnOWVNGAwFIcQRrZCnoAsIOBg&s", price: 10 },
+        { name: "Kurkure Masala Munch", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/c5cb2b8d-607e-4d46-a81e-2fc7bc882aa6.png", price: 20 },
+        { name: "Haldiram Bhujia", image: "https://dms.mydukaan.io/original/jpeg/master/products/haldiram-s-bhujia-1-kg.png", price: 30 },
+        { name: "Bingo Mad Angles", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw2BTbkpxwCOPSvOjtxkdFYJF8LR1_IqUjHA&s", price: 50 },
+        { name: "Peanuts (Moongphali)", image: "https://m.media-amazon.com/images/I/619ZKWOmJPL._AC_UF894,1000_QL80_.jpg", price: 100 },
       ]
     },
     {
       name: "Noodles & Chowmein",
       products: [
-        { name: "Maggi Masala Noodles", image: "https://www.bigbasket.com/media/uploads/p/l/266109_28-maggi-2-minute-instant-noodles-masala.jpg", price: 10 },
-        { name: "Chings Manchurian Noodles", image: "https://www.bigbasket.com/media/uploads/p/l/40125433_5-chings-secret-manchurian-instant-noodles.jpg", price: 20 },
-        { name: "Chowmein Noodles", image: "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=300&q=80", price: 30 },
+        { name: "Maggi Masala Noodles", image: "https://themintleaves.com/cdn/shop/products/812o4EQXPKL._SX679_3e23b64a-9636-4544-9e9d-4f0c396cc724_1024x1024@2x.jpg?v=1619599706", price: 10 },
+      
+        { name: "Chowmein Noodles", image: "https://m.media-amazon.com/images/I/91ZsiYbaZRL._SX679_.jpg", price: 30 },
         { name: "Maggi Pasta", image: "https://www.bigbasket.com/media/uploads/p/l/2000494_12-maggi-pazzta-cheese-macaroni.jpg", price: 50 },
         { name: "Bambino Vermicelli", image: "https://www.bigbasket.com/media/uploads/p/l/123048_4-bambino-vermicelli.jpg", price: 100 },
       ]
@@ -38,7 +38,7 @@ export default function Products() {
     {
       name: "Staples: Aata, Chawal, Dal",
       products: [
-        { name: "Aata (Flour)", image: "https://images.unsplash.com/photo-1521483451569-e33803c0330c?auto=format&fit=crop&w=300&q=80", price: 10 },
+        { name: "Aata (Flour)", image: "https://unsplash.com/photos/a-wooden-cutting-board-topped-with-dough-next-to-a-bowl-of-flour-P5OWOQecGTY", price: 10 },
         { name: "Chawal (Rice)", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=300&q=80", price: 20 },
         { name: "Dal (Lentils)", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=300&q=80", price: 30 },
         { name: "Moong Dal", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=300&q=80", price: 50 },
