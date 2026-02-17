@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import dukan from "../assets/dukan.png";
+
 
 export default function Home() {
   const [animatedStats, setAnimatedStats] = useState({ families: 0, years: 0 });
@@ -93,11 +95,18 @@ export default function Home() {
           <div className="relative flex justify-center">
             <div className="absolute inset-0 bg-[#facc15]/20 blur-[100px] rounded-full"></div>
             <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-[40px] border border-white/20 max-w-sm">
-              <img 
+              {/* <img 
                 src="https://images.unsplash.com/photo-1588964895597-cfccd6e2cbf9?auto=format&fit=crop&w=600&q=80" 
                 className="rounded-[30px] w-full h-80 object-cover mb-4"
                 alt="हमारी दुकान"
-              />
+              /> */}
+
+              <img 
+  src={dukan}
+  className="rounded-[30px] w-full h-80 object-cover mb-4"
+  alt="हमारी दुकान"
+/>
+
               <h3 className="text-2xl font-bold text-white">हमारा परिवार – आपका परिवार</h3>
               <p className="text-[#facc15] font-semibold italic">"राजकुमारी जी खुद चुनती हैं हर सामान"</p>
             </div>
