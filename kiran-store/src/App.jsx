@@ -2,12 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Categories from "./pages/Categories";
-import Cart from "./pages/Cart";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Home from "./Pages/Home";
+import Products from "./Pages/Products";
+import Categories from "./Pages/Categories";
+import Cart from "./Pages/Cart";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 
 export default function App() {
   return (
