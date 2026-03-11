@@ -1,67 +1,68 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import dukan from "../assets/dukan.png";
+import ProductCard from "../components/ProductCard";
+import { groceryProducts } from "../data/products";
 
+// Banners
+import pharmacyBanner from "../assets/pharmacy_banner.png";
+import petCareBanner from "../assets/pet_care_banner.png";
+import babyCareBanner from "../assets/baby_care_banner.png";
 
 export default function Home() {
-  const [animatedStats, setAnimatedStats] = useState({ families: 0, years: 0 });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimatedStats(prev => ({
-        families: Math.min(prev.families + 10, 500),
-        years: Math.min(prev.years + 1, 12),
-      }));
-    }, 30);
-    return () => clearInterval(interval);
-  }, []);
-
   const categories = [
-    { title: "आटा, चावल, दाल", img: "https://images.unsplash.com/photo-1702061895070-15d7972d3eef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#14532d]" },
-    { title: "तेल, मसाले, नमक", img: "https://images.unsplash.com/photo-1653379316270-49c7b3d70110?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#facc15]" },
-    { title: "बिस्कुट, चॉकलेट", img: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#14532d]" },
-    { title: "नमकीन, स्नैक्स", img: "https://images.unsplash.com/photo-1600952841320-db92ec4047ca?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#facc15]" },
-    { title: "चाय, कॉफी, दूध", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", color: "from-[#14532d]" },
-    { title: "साबुन, शैम्पू", img: "https://media.gettyimages.com/id/514771903/photo/woman-buys-washing-powder.jpg?s=1024x1024&w=gi&k=20&c=NZi7cb2YRQSmVsvUpLBaRyC3kinv8t11vwJ0qVP4cUM=", color: "from-[#facc15]" },
+    { title: "Soft Drinks & Mixers", img: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=500&auto=format&fit=crop&q=60" },
+    { title: "Dairy, Bread & Eggs", img: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=500&auto=format&fit=crop&q=60" },
+    { title: "Salt, Sugar & Jaggery", img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format&fit=crop&q=60" },
+    { title: "Chips & Crisps", img: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60" },
+    { title: "Juices & Healthy Drinks", img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500&auto=format&fit=crop&q=60" },
+    { title: "Tea, Coffee & More", img: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=500&auto=format&fit=crop&q=60" },
+    { title: "Paan Corner", img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500&auto=format&fit=crop&q=60" },
+    { title: "Bakery & Biscuits", img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&auto=format&fit=crop&q=60" },
+    { title: "Sweet Tooth", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&auto=format&fit=crop&q=60" },
+    { title: "Breakfast Food", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&auto=format&fit=crop&q=60" },
+    { title: "Atta, Rice & Dal", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&auto=format&fit=crop&q=60" },
+    { title: "Masala & Oil", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&auto=format&fit=crop&q=60" },
+    { title: "Sauces & Spreads", img: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&auto=format&fit=crop&q=60" },
+    { title: "Chicken & Meat", img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&auto=format&fit=crop&q=60" },
+    { title: "Organic Living", img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500&auto=format&fit=crop&q=60" },
+    { title: "Baby Care", img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&auto=format&fit=crop&q=60" },
+    { title: "Pharma & Wellness", img: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=500&auto=format&fit=crop&q=60" },
+    { title: "Cleaning", img: "https://images.unsplash.com/photo-1584820927498-cafe2c1c9c9b?w=500&auto=format&fit=crop&q=60" },
+    { title: "Home & Office", img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&auto=format&fit=crop&q=60" },
+    { title: "Pet Care", img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500&auto=format&fit=crop&q=60" },
   ];
 
-  // Dummy testimonials – replace with real ones later
+  // Dummy testimonials
   const testimonials = [
     {
-      name: "प्रीति शर्मा",
-      location: "गली नंबर 5",
-      text: "राजकुमारी दीदी हमेशा ताज़ा सामान देती हैं। बच्चों को बिस्कुट भी पसंद हैं!",
-      rating: 5,
-      img: "https://images.unsplash.com/photo-1494790108777-766fd68f7d21?auto=format&fit=crop&w=150&q=80",
+      name: "Pritti Sharma", location: "Gali No 5", text: "Rajkumari Didi always gives fresh items. Kids love the biscuits!", rating: 5, img: "https://images.unsplash.com/photo-1494790108777-766fd68f7d21?auto=format&fit=crop&w=150&q=80",
     },
     {
-      name: "राजेश कुमार",
-      location: "मेन बाज़ार",
-      text: "पिछले 10 सालों से यहीं से ले रहा हूँ। दाम हमेशा उचित और मिलावट नहीं।",
-      rating: 5,
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      name: "Rajesh Kumar", location: "Main Bazar", text: "Buying from here for 10 years. Prices are fair and no adulteration.", rating: 5, img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
     },
     {
-      name: "सुनीता देवी",
-      location: "आज़ाद नगर",
-      text: "फोन पर ऑर्डर करो, 2 घंटे में घर पर। बहुत सुविधा हो गई।",
-      rating: 5,
-      img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=80",
+      name: "Sunita Devi", location: "Azad Nagar", text: "Order on phone, delivered in 2 hours to home. Very convenient.", rating: 5, img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=80",
     },
     {
-      name: "मनोज साहनी",
-      location: "स्टेशन रोड",
-      text: "यहाँ का मसाला बहुत खुशबूदार है। पूरे मोहल्ले में मशहूर।",
-      rating: 5,
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      name: "Manoj Sahani", location: "Station Road", text: "The spices here are very aromatic. Famous in the whole neighborhood.", rating: 5, img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
     },
   ];
 
-  const featuredProducts = [
-    { name: "आस्था आटा (5kg)", price: "₹220", img: "https://5.imimg.com/data5/SELLER/Default/2021/7/EQ/AA/AY/6428050/5-kg-wheat-flour-500x500.jpeg" },
-    { name: "धारा तेल (1L)", price: "₹110", img: "https://m.media-amazon.com/images/I/510JZdHZZvL._SX679_.jpg" },
-    { name: "बिस्कुट पैक (1kg)", price: "₹80", img: "https://keralakaumudi.com/web-news/en/2025/06/NMAN0592930/image/new-delhi-parle-g-biscuit.1.3308115.webp" },
-    { name: "गुड़ और शक्कर  (1kg)", price: "₹60", img: "https://c.ndtvimg.com/2023-11/tt2lmteo_jaggery-and-sugar-_625x300_12_November_23.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=738" },
+  // Products grouped by the 12 requested categories
+  const categorySections = [
+    { title: "Soft Drinks & Mixers", products: groceryProducts.filter(p => p.category === "Soft Drinks & Mixers") },
+    { title: "Dairy, Bread & Eggs", products: groceryProducts.filter(p => p.category === "Dairy, Bread & Eggs") },
+    { title: "Salt, Sugar & Jaggery", products: groceryProducts.filter(p => p.category === "Salt, Sugar & Jaggery") },
+    { title: "Chips & Crisps", products: groceryProducts.filter(p => p.category === "Chips & Crisps") },
+    { title: "Juices & Healthy Drinks", products: groceryProducts.filter(p => p.category === "Juices & Healthy Drinks") },
+    { title: "Tea, Coffee & More", products: groceryProducts.filter(p => p.category === "Tea, Coffee & More") },
+    { title: "Snacks & Munchies", products: groceryProducts.filter(p => p.category === "Snacks & Munchies") },
+    { title: "Bakery & Biscuits", products: groceryProducts.filter(p => p.category === "Bakery & Biscuits") },
+    { title: "Breakfast & Instant Food", products: groceryProducts.filter(p => p.category === "Breakfast & Instant Food") },
+    { title: "Sweet Tooth", products: groceryProducts.filter(p => p.category === "Sweet Tooth") },
+    { title: "Atta, Rice & Dal", products: groceryProducts.filter(p => p.category === "Atta, Rice & Dal") },
+    { title: "Masala & Oil", products: groceryProducts.filter(p => p.category === "Masala & Oil") },
   ];
 
   return (
@@ -75,18 +76,18 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#facc15] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#facc15]"></span>
               </span>
-              आपका अपना राजकुमारी किराना स्टोर
+              Your Local Supermarket, Online
             </div>
             <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-              रोज़मर्रा की <br />
-              <span className="text-[#facc15]">हर जरूरत </span> एक ही जगह
+              Lightning Fast <br />
+              <span className="text-[#facc15]">Grocery Delivery</span>
             </h1>
             <p className="text-gray-100 text-lg mb-8 max-w-lg">
-              ताज़ा सामान, उचित दाम, और वही पुराना भरोसा। पिछले 12 सालों से आपके परिवार की सेवा में।
+              Fresh produce, daily essentials, and trusted brands delivered to your doorstep in 10-30 minutes.
             </p>
             <div className="flex gap-4">
               <Link to="/products" className="bg-[#facc15] text-[#14532d] hover:bg-yellow-400 px-10 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-black/20">
-                अभी खरीदें →
+                Start Shopping →
               </Link>
             </div>
           </div>
@@ -95,230 +96,77 @@ export default function Home() {
           <div className="relative flex justify-center">
             <div className="absolute inset-0 bg-[#facc15]/20 blur-[100px] rounded-full"></div>
             <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-[40px] border border-white/20 max-w-sm">
-              {/* <img 
-                src="https://images.unsplash.com/photo-1588964895597-cfccd6e2cbf9?auto=format&fit=crop&w=600&q=80" 
+              <img
+                src={dukan}
                 className="rounded-[30px] w-full h-80 object-cover mb-4"
-                alt="हमारी दुकान"
-              /> */}
-
-              <img 
-  src={dukan}
-  className="rounded-[30px] w-full h-80 object-cover mb-4"
-  alt="हमारी दुकान"
-/>
-
-              <h3 className="text-2xl font-bold text-white">हमारा परिवार – आपका परिवार</h3>
-              <p className="text-[#facc15] font-semibold italic">"राजकुमारी जी खुद चुनती हैं हर सामान"</p>
+                alt="Our Shop"
+              />
+              <h3 className="text-2xl font-bold text-white">Always Fresh, Always Fast</h3>
+              <p className="text-[#facc15] font-semibold italic">"Quality you can trust."</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Categories – Daily Essentials */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-10">
-          <div>
-            <h2 className="text-3xl font-black text-[#14532d] uppercase tracking-tight">हमारी प्रमुख श्रेणियाँ</h2>
-            <div className="h-1 w-20 bg-[#facc15] mt-2 rounded-full"></div>
+      {/* Main Promotional Banners - BIG SIZES */}
+      <section className="py-8 px-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="relative group overflow-hidden rounded-[32px] aspect-[16/9] shadow-lg hover:shadow-xl transition-all">
+            <img src={pharmacyBanner} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Pharmacy" />
+            <div className="absolute bottom-6 left-6 z-10">
+              <Link to="/products" className="bg-white text-gray-900 px-6 py-2.5 rounded-full font-black text-sm shadow-md hover:bg-gray-50 transition-colors">Order Now</Link>
+            </div>
           </div>
-          <Link to="/categories" className="text-[#14532d] font-bold hover:underline">सभी देखें →</Link>
+          <div className="relative group overflow-hidden rounded-[32px] aspect-[16/9] shadow-lg hover:shadow-xl transition-all">
+            <img src={petCareBanner} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Pet Care" />
+            <div className="absolute bottom-6 left-6 z-10">
+              <Link to="/products" className="bg-[#2d2d2d] text-white px-6 py-2.5 rounded-full font-black text-sm shadow-md hover:bg-black transition-colors">Order Now</Link>
+            </div>
+          </div>
+          <div className="relative group overflow-hidden rounded-[32px] aspect-[16/9] shadow-lg hover:shadow-xl transition-all">
+            <img src={babyCareBanner} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Baby Care" />
+            <div className="absolute bottom-6 left-6 z-10">
+              <Link to="/products" className="bg-[#2d2d2d] text-white px-6 py-2.5 rounded-full font-black text-sm shadow-md hover:bg-black transition-colors">Order Now</Link>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      {/* Categories - Smaller & Denser */}
+      <section className="py-8 px-4 max-w-7xl mx-auto border-b border-gray-100">
+        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-2 sm:gap-4 md:gap-4">
           {categories.map((cat, i) => (
-            <Link to="/products" key={i} className="group relative overflow-hidden rounded-3xl bg-gray-100 aspect-square transition-all hover:shadow-xl hover:shadow-[#14532d]/20">
-              <div className={`absolute inset-0 bg-gradient-to-t ${cat.color} to-transparent opacity-20 group-hover:opacity-30 transition-opacity`}></div>
-              <img src={cat.img} className="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-110" alt={cat.title} />
-              <div className="absolute bottom-0 left-0 right-0 p-3 bg-white/90 backdrop-blur-sm border-t border-[#facc15]">
-                <p className="text-sm font-bold text-[#14532d] text-center">{cat.title}</p>
+            <Link to="/products" key={i} className="group flex flex-col items-center">
+              <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-[#f3f9f5] border border-green-50/50 transition-all hover:shadow-sm">
+                <img src={cat.img} className="w-full h-full object-cover p-1.5 transition-transform duration-500 group-hover:scale-110" alt={cat.title} />
               </div>
+              <p className="text-[9px] sm:text-[10px] font-bold text-gray-600 text-center leading-tight mt-1.5 line-clamp-2 h-6">{cat.title}</p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-16 px-4 max-w-7xl mx-auto bg-gray-50 rounded-3xl">
-        <div className="flex justify-between items-end mb-10">
-          <div>
-            <h2 className="text-3xl font-black text-[#14532d] uppercase tracking-tight">लोकप्रिय उत्पाद</h2>
-            <div className="h-1 w-20 bg-[#facc15] mt-2 rounded-full"></div>
+      {/* Dynamic Category Sections */}
+      {categorySections.map((section, idx) => (
+        <section key={idx} className="py-8 px-4 max-w-7xl mx-auto">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">{section.title}</h2>
+            <Link to="/products" className="text-green-600 font-bold text-sm hover:underline">see all</Link>
           </div>
-          <Link to="/products" className="text-[#14532d] font-bold hover:underline">सभी देखें →</Link>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {featuredProducts.map((product, i) => (
-            <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition border border-gray-100">
-              <img src={product.img} className="w-full h-48 object-cover" alt={product.name} />
-              <div className="p-4">
-                <h3 className="font-bold text-lg text-[#14532d]">{product.name}</h3>
-                <p className="text-[#facc15] font-black text-xl mt-1">{product.price}</p>
-                <Link to="/products" className="mt-3 inline-block bg-[#14532d] text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-[#0f3a22] transition">
-                  जल्दी लें →
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Trust Strip – Local Credibility */}
-      <section className="bg-[#14532d] py-12">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <p className="text-4xl font-black text-[#facc15] mb-2">{animatedStats.families}+</p>
-            <p className="text-gray-300 text-sm font-bold uppercase tracking-widest">संतुष्ट परिवार</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-3 sm:gap-4 md:gap-5">
+            {section.products.map((product) => (
+              <ProductCard key={product.id} id={product.id} name={product.name} price={product.price} image={product.image} />
+            ))}
           </div>
-          <div>
-            <p className="text-4xl font-black text-[#facc15] mb-2">२ घंटे</p>
-            <p className="text-gray-300 text-sm font-bold uppercase tracking-widest">फ्री होम डिलीवरी</p>
-          </div>
-          <div>
-            <p className="text-4xl font-black text-[#facc15] mb-2">१००%</p>
-            <p className="text-gray-300 text-sm font-bold uppercase tracking-widest">ताज़ा उत्पाद</p>
-          </div>
-          <div>
-            <p className="text-4xl font-black text-[#facc15] mb-2">{animatedStats.years}+ साल</p>
-            <p className="text-gray-300 text-sm font-bold uppercase tracking-widest">आपके भरोसे का साथी</p>
-          </div>
+        </section>
+      ))}
+
+      {/* Simple Footer Disclaimer */}
+      <footer className="py-12 px-4 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-400 text-sm font-medium">© 2026 Kirana Store. Fast Grocery Delivery to your doorstep.</p>
         </div>
-      </section>
-
-      {/* Owner's Message / Local Connect
-     {/* Owner's Message / Local Connect */}
-<section className="py-16 px-4 max-w-5xl mx-auto">
-  <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
-    <div className="grid md:grid-cols-2">
-      
-      {/* LEFT SIDE */}
-      <div className="p-8 md:p-12 bg-gradient-to-br from-[#14532d] to-[#14532d]/90 text-white">
-        <h2 className="text-3xl font-black mb-4">राजकुमारी जी का संदेश</h2>
-        <p className="text-gray-100 mb-6 leading-relaxed">
-          "पिछले 5 सालों से हम आपके लिए रोज़मर्रा का सामान लाते हैं। हर पैकेट, हर दाना हम खुद देखते हैं, ताकि आपको मिले सिर्फ़ सबसे अच्छा। ये दुकान सिर्फ़ दुकान नहीं, हमारा परिवार है – और आप उस परिवार का हिस्सा हैं।"
-        </p>
-
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#14532d] font-black text-xl shadow-md">
-            रा
-          </div>
-          <div>
-            <p className="font-bold text-lg">राजकुमारी देवी</p>
-            <p className="text-sm text-gray-200">
-              संस्थापक, राजकुमारी किराना स्टोर
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* RIGHT SIDE */}
-      <div className="bg-white p-8 md:p-12 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-6xl mb-4">🏪</p>
-          <p className="text-2xl font-black text-[#14532d] mb-2">
-            आओ, मिलकर बैठें
-          </p>
-          <p className="text-gray-600">
-            शिव कॉलोनी, सरलानगर, मैहर (म.प्र.) – आपके बस कदमों की दूरी पर
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-      {/* 🌟 USER REVIEWS / TESTIMONIALS */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-black text-[#14532d] mb-4">हमारे ग्राहक, हमारी शान</h2>
-          <div className="h-1 w-24 bg-[#facc15] mx-auto rounded-full"></div>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition">
-              <div className="flex items-center gap-3 mb-4">
-                <img src={t.img} className="w-14 h-14 rounded-full object-cover border-2 border-[#facc15]" alt={t.name} />
-                <div>
-                  <p className="font-bold text-[#14532d]">{t.name}</p>
-                  <p className="text-sm text-gray-500">{t.location}</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-3">"{t.text}"</p>
-              <div className="flex text-[#facc15]">
-                {[...Array(t.rating)].map((_, i) => <span key={i}>⭐</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16 px-4 bg-gradient-to-r from-[#facc15]/10 to-[#14532d]/10">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-black text-[#14532d] text-center mb-12">क्यों चुनें राजकुमारी किराना?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl shadow-lg text-center">
-              <div className="text-5xl mb-4">🌿</div>
-              <h3 className="text-xl font-bold text-[#14532d] mb-2">ताज़गी की गारंटी</h3>
-              <p className="text-gray-600">हर उत्पाद की एक्सपायरी चेक होती है। पुराना सामान कभी नहीं बेचते।</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-lg text-center">
-              <div className="text-5xl mb-4">🏠</div>
-              <h3 className="text-xl font-bold text-[#14532d] mb-2">फ्री होम डिलीवरी</h3>
-              <p className="text-gray-600">आस-पास के इलाकों में 2 घंटे के अंदर सामान पहुँच जाता है।</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-lg text-center">
-              <div className="text-5xl mb-4">🤝</div>
-              <h3 className="text-xl font-bold text-[#14532d] mb-2">उचित दाम, पूरा भरोसा</h3>
-              <p className="text-gray-600">बाज़ार से कम दाम, मिलावट नहीं, और पुराने ग्राहकों के लिए खास छूट।</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Store Info & Timings */}
-      <section className="py-12 px-4 max-w-5xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-xl p-8 border border-[#facc15]/20">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-black text-[#14532d] mb-4">दुकान का समय</h3>
-              <div className="space-y-2 text-gray-700 text-lg">
-                <p><span className="font-bold">सोम-शनि:</span> सुबह 8:00 – रात 9:00</p>
-                <p><span className="font-bold">रविवार:</span> सुबह 9:00 – शाम 7:00</p>
-                <p className="mt-4"><span className="font-bold">📞 फोन:</span> 98765 43210</p>
-                <p><span className="font-bold">📍 पता:</span> शिव कॉलोनी, सरलानगर, मैहर (म.प्र.)</p>
-              </div>
-            </div>
-            <div className="bg-[#facc15] p-6 rounded-2xl text-center">
-              <p className="text-2xl font-black text-[#14532d] mb-2">हर ग्राहक परिवार है!</p>
-              <p className="text-[#14532d]">बिना झिझक फोन करें – हम आपके लिए हैं।</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#14532d] to-[#14532d] rounded-[40px] p-12 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#facc15]/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-          <h2 className="text-4xl md:text-5xl font-black mb-6">अभी ऑर्डर करें, २ घंटे में पाएँ!</h2>
-          <p className="text-gray-100 text-xl mb-10 max-w-2xl mx-auto">हर खरीद पर छोटा तोहफा और ताज़ा सामान की गारंटी।</p>
-          <Link to="/products" className="bg-[#facc15] text-[#14532d] px-12 py-4 rounded-2xl font-black text-xl hover:bg-yellow-400 transition-all shadow-xl">
-            दुकान चलें 🛒
-          </Link>
-        </div>
-      </section>
+      </footer>
     </div>
   );
 }
